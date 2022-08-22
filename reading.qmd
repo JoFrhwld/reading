@@ -1,0 +1,129 @@
+---
+title: "Reading a Technical Paper"
+format: 
+  html:
+    theme: materia
+    fig-cap-location: margin
+    toc: true
+    toc-location: left
+author: "[Josef Fruehwald](https://jofrhwld.github.io/)"
+date: 2022-08-22
+license: "CC BY 4.0"
+reference-location: margin
+editor: visual
+bibliography: references.bib
+---
+
+## Reading papers is always hard
+
+There may never be a point in your academic life where you will read a paper and understand everything in it (or if there is, I haven't gotten there). Instead, you have to develop methods for getting whatever information you *can* out of a paper itself, and then draw up a list of terms and concepts to do further background research on.
+
+Let's work through a sample paragraph from @bender2021 to see some of these strategies in action.
+
+## A Tricky Paragraph
+
+@bender2021 is an important paper about ethics and safety concerns in natural language processing. However, it could be hard to follow some of the discussion without a background in the NLP literature. Here's a sample paragraph where they discuss specific advancements made in NLP models.
+
+> The next big step was the move towards using pretrained representations of the distribution of words (called *word embeddings*) in other (supervised) NLP tasks. These word vectors came from systems such as word2vec \[85\] and GloVe \[98\] and later LSTM models such as context2vec \[82\] and ELMo \[99\] and supported state of the art performance on question answering, textual entailment, semantic role labeling (SRL), coreference resolution, named entity recognition (NER), and sentiment analysis, at first in English and later for other languages as well. While training the word embeddings required a (relatively) large amount of data, it reduced the amount of labeled data necessary for training on the various supervised tasks. For example, \[99\] showed that a model trained with ELMo reduced the necessary amount of training data needed to achieve similar results on SRL compared to models without, as shown in one instance where a model trained with ELMo reached the maximum development F1 score in 10 epochs as opposed to 486 without ELMo. This model furthermore achieved the same F1 score with 1% of the data as the baseline model achieved with 10% of the training data. Increasing the number of model parameters, however, did not yield noticeable increases for LSTMs \[e.g. 82\].
+
+My own approach to trying to understand paragraphs (and whole papers) like this, where I might not be familiar with all of the concepts involved, is ask the following questions:
+
+-   Can I figure out the upshot? What message is this paragraph trying to communicate?
+
+-   Can I pick out any themes? What keeps getting repeated?
+
+-   What search terms can I pull out of the paper to do more background research.
+
+## Can we figure out the upshot?
+
+This paragraph is trying to tell us *something*. I've color coded the pieces of the paragraph which I think are most useful for figuring out the point of this paragraph even if you don't know what all the specifics mean.
+
+> [**The next big step**]{style="color: #F86624"}[^1] was the move towards using pretrained representations of the distribution of words (called *word embeddings*) in other (supervised) NLP tasks. These word vectors came from systems such as word2vec \[85\] and GloVe \[98\] and later LSTM models such as context2vec \[82\] and ELMo \[99\] and [**supported state of the art**]{style="color: #F86624"}[^2] performance on question answering, textual entailment, semaantic role labeling (SRL), coreference resolution, named entity recognition (NER), and sentiment analysis, [**at first in English and later for other languages as well**]{style="color: #F86624"}[^3]. While training the word embeddings required a (relatively) large amount of data, [**it reduced the amount of labeled data necessary**]{style="color: #662E9B"}[^4] for training on the various supervised tasks. For example, \[99\] showed that a model trained with ELMo [**reduced the necessary amount of training data needed**]{style="color: #662E9B"}[^5] to achieve similar results on SRL compared to models without, as shown in one instance where a model trained with ELMo [**reached the maximum development F1 score**]{style="color: #F86624"}[^6] [**in 10 epochs as opposed to 486**]{style="color: #662E9B"}[^7] without ELMo. This model furthermore [**achieved the same F1 score with 1% of the data as the baseline model achieved with 10% of the training data**]{style="color: #662E9B"}[^8]. Increasing the number of model parameters, however, did not yield noticeable increases for LSTMs \[e.g. 82\].
+
+[^1]: ["Big steps", improvement]{style="color: #F86624"}
+
+[^2]: ["state of the art", (SOTA) means the best it can be]{style="color: #F86624"}
+
+[^3]: ["at first ... and later" from limited applications, it expanded]{style="color: #F86624"}
+
+[^4]: [less "labeled data" needed.]{style="color:#662E9B"}
+
+[^5]: [Less "training data" needed.]{style="color:#662E9B"}
+
+[^6]: [Whatever the "F1 score" is, this got the best one]{style="color: #F86624"}
+
+[^7]: [Whatever an "epoch" is, this needed less of them]{style="color:#662E9B"}
+
+[^8]: [The same score, but less data.]{style="color: #662E9B"}
+
+### The upshot
+
+[**\~Things\~ got better**]{style="color: #F86624"} [**with less**]{style="color: #662E9B"}.
+
+## Can we figure out themes from repetition?
+
+I've highlighted the words whose repetition struck me as being important to the theme of this paragraph.
+
+> The next big step was the move towards using [**pretrained**]{style="color: #EA3546"} representations of the distribution of words (called *word embeddings*) in other (supervised) NLP tasks. These word vectors came from systems such as word2vec \[85\] and GloVe \[98\] and later LSTM models such as context2vec \[82\] and ELMo \[99\] and supported state of the art performance on question answering, textual entailment, semantic role labeling (SRL), coreference resolution, named entity recognition (NER), and sentiment analysis, at first in English and later for other languages as well. While [**training**]{style="color: #EA3546"} the word embeddings required a (relatively) large amount of [**data**]{style="color: #43BCCD"}, it reduced the amount of [**labeled data**]{style="color: #43BCCD"} necessary for [**training**]{style="color: #EA3546"} on the various supervised tasks. For example, \[99\] showed that a model [**trained**]{style="color: #EA3546"} with ELMo reduced the necessary amount of [**training**]{style="color: #EA3546"} [**data**]{style="color: #43BCCD"} needed to achieve similar results on SRL compared to models without, as shown in one instance where a model [**trained**]{style="color: #EA3546"} with ELMo reached the maximum development F1 score in 10 epochs as opposed to 486 without ELMo. This model furthermore achieved the same F1 score with 1% of the [**data**]{style="color: #43BCCD"} as the baseline model achieved with 10% of the [**training**]{style="color: #EA3546"} [**data**]{style="color: #43BCCD"}. Increasing the number of model parameters, however, did not yield noticeable increases for LSTMs \[e.g. 82\].
+
+It seems clear "[training]{style="color: #EA3546"}" is a big deal, and it involves [data]{style="color: #43BCCD"}.
+
+## Any search terms for background research?
+
+There are a lot of technical terms in this paragraph, but it seems like they can be classified under a few main categories.
+
+> The next big step was the move towards using pretrained representations of the distribution of words (called [***word embeddings***]{style="color: #F9C80E"}) in other (supervised) [**NLP tasks**]{style="color: #F86624"}. These [**word vectors**]{style="color: #F9C80E"} came from systems such as [**word2vec**]{style="color: #F9C80E"} \[85\] and [**GloVe**]{style="color: #F9C80E"} \[98\] and later [**LSTM models**]{style="color: #F9C80E"} such as [**context2vec**]{style="color: #F9C80E"} \[82\] and [**ELMo**]{style="color: #F9C80E"} \[99\] and supported state of the art performance on [**question answering**]{style="color: #F86624"}, [**textual entailment**]{style="color: #F86624"}, [**semantic role labeling (SRL)**]{style="color: #F86624"}, [**coreference resolution**]{style="color: #F86624"}, [**named entity recognition (NER)**]{style="color: #F86624"}, and [**sentiment analysis**]{style="color: #F86624"}, at first in English and later for other languages as well. While training the [**word embeddings**]{style="color: #F9C80E"}required a (relatively) large amount of data, it reduced the amount of labeled data necessary for training on the various supervised tasks. For example, \[99\] showed that a model trained with [**ELMo**]{style="color: #F9C80E"} reduced the necessary amount of training data needed to achieve similar results on [**SRL**]{style="color: #F86624"} compared to models without, as shown in one instance where a model trained with [**ELMo**]{style="color: #F9C80E"} reached the maximum development [**F1 score**]{style="color: #662E9B"} in 10 epochs as opposed to 486 without [**ELMo**]{style="color: #F9C80E"}. This model furthermore achieved the same [**F1 score**]{style="color: #662E9B"} with 1% of the data as the baseline model achieved with 10% of the training data. Increasing the number of model parameters, however, did not yield noticeable increases for [**LSTMs**]{style="color: #F9C80E"} \[e.g. 82\].
+
+There's at least three kinds of things we could try doing some background research on here:
+
+### ["Models"]{style="color: #F9C80E"}
+
+There are a few models named here. Some seem like generic names, and others seem more specific. The most generic "word embeddings" is actually defined in the paragraph
+
+> representations of the distribution of words
+
+There's probably a lot more to investigate here.
+
+After defining "word embeddings," they say "these word vectors", which seems to suggest that these are synonymous or at least highly interchangeable concepts.
+
+Specific "systems" that generate "word vectors" are
+
+-   word2vec
+
+-   GloVe
+
+Some good search terms to find information about these would probably be "word2vec word vectors" or "GloVe word vectors".
+
+Next they name another class of model, "LSTM models," that generate "word vectors", and name some specific LSTM models[You can also get an idea of naming conventions in this field. The name formats seem to either be *thing2thing* or an acronym that is a pronounceable word... and hard to search for all on its own.]{.aside}
+
+-   context2vec
+
+-   ELMo
+
+Some good search terms here would probably be "LSTM context2vec" or "LSTM ELMo".
+
+### ["NLP Tasks"]{style="color: #F86624"}
+
+After saying that these models are used on "NLP tasks", they name a few specific ones. Some of them just have names, while others also have an acronym associated with them.
+
+-   question answering
+
+-   textual entailment
+
+-   semantic role labeling (SRL)
+
+-   coreference resolution
+
+-   named entity recognition (NER)
+
+-   sentiment analysis
+
+Some of these tasks wouldn't make for great search terms on their own, like "question answering," but appending "NLP" to the beginning for "NLP question answering" would probably work.
+
+### [Scores]{style="color: #662E9B"}
+
+In this paragraph, only one kind of score, the "F1 score" is mentioned. But in the context of the rest of the paper, there are a number of other "Scores" that could be important to investigate.
+
+## Wrapping up
+
+Normally, the process isn't as elaborate as it appears in this demo. I don't usually color code all of the words in a paragraph, much less a whole paper, like this. But I *do* often try to mentally summarize paragraphs and sections with what the upshot is. Some authors are better than others in getting across their point in among the technical aspects, but ideally they are always trying to communicate some message that you can at least approximate even if you don't understand everything in detail.

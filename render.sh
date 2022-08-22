@@ -1,0 +1,1 @@
+quarto render notation.qmd --execute --output index.html
