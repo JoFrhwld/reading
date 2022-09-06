@@ -2,11 +2,11 @@
 title: "Reading a Technical Paper"
 format: 
   html:
-    theme: materia
-    fig-cap-location: margin
-    toc: true
-    toc-location: left
-author: "[Josef Fruehwald](https://jofrhwld.github.io/)"
+    output-file: "index"
+    output-ext: "html"
+author: 
+  - name: Josef Fruehwald
+  - url: https://jofrhwld.github.io/
 date: 2022-08-22
 license: "CC BY 4.0"
 reference-location: margin
